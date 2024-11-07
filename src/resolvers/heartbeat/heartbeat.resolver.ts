@@ -4,7 +4,6 @@ import { Topic } from '@root/resolvers/general.pubsub';
 
 @Resolver()
 export class HeartBeatResolver {
-
 	@Query()
 	startup(): string {
 		return "OK";
