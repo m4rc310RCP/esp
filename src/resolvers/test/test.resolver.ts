@@ -8,12 +8,14 @@ export class TestMessageResolver {
 
 	@Mutation(returns => Boolean)
 	async sendMessage(@Arg('message') message: String): Promise<boolean> {
+		console.log('publish message' + message)
 		generalPubsub.publish(Topic.TEST_MESSAGE, { message });
 		return true;
 	}
 
 	@Subscription(() => TestMessage, { topics: Topic.TEST_MESSAGE })
 	async messageSubscription(@Root() { message }: ITestMessagePayload): Promise<TestMessage> {
+		console.log('Register subscription ' + message)
 		return { message };
 	}
 }
