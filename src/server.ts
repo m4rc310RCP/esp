@@ -6,6 +6,7 @@ import { readFileSync } from "node:fs";
 import { createYoga } from "graphql-yoga";
 import { buildSchema } from "type-graphql";
 import { HeartBeatResolver } from '@resolvers/heartbeat/heartbeat.resolver';
+import { TestMessageResolver } from '@resolvers/test/test.resolver';
 import { generalPubsub, Topic } from '@root/resolvers/general.pubsub';
 
 
@@ -14,7 +15,7 @@ const overviewHtml = readFileSync(overview, 'utf-8');
 
 async function startup() {
 	const schema = await buildSchema({
-		resolvers: [HeartBeatResolver],
+		resolvers: [HeartBeatResolver, TestMessageResolver],
 		emitSchemaFile: path.resolve(__dirname, "schema.graphql"),
 		pubSub: generalPubsub
 	});
