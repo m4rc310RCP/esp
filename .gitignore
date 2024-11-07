@@ -1,0 +1,56 @@
+# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Diretório de saída (ex: TypeScript compilado)
+dist/
+build/
+
+# Arquivos de configuração de ambiente
+.env
+.env.local
+.env.*.local
+
+# Cache de pacotes e arquivos temporários
+.cache/
+.temp/
+
+# Configurações específicas do editor
+.vscode/
+.idea/
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# Debug
+*.tsbuildinfo
+
+# PM2 (gerenciamento de processos de produção do Node)
+pm2-log.txt
+pids/
+*.pid
+*.seed
+
+# Cobertura de testes
+coverage/
+
+# Arquivos de configuração de depuração do NPM
+.npmrc
+
+# Arquivos de configuração do ESLint
+.eslintcache
+
+# Arquivos de configuração do TypeScript
+*.tsbuildinfo
+
+# Arquivos de lock específicos do Yarn e PNPM (se você está usando apenas npm)
+.pnpm-lock.yaml
+yarn.lock

@@ -1,0 +1,35 @@
+{
+	"compilerOptions": {
+		"target": "es2016",
+		"module": "commonjs",
+		"lib": [
+			"es6"
+		],
+		"allowJs": true,
+		"outDir": "build",
+		"rootDir": "src",
+		"strict": true,
+		"noImplicitAny": true,
+		"esModuleInterop": true,
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+		"forceConsistentCasingInFileNames": true,
+		"resolveJsonModule": true,
+		"baseUrl": "./src",
+		"paths": {
+			"@root/*": [
+				"*"
+			],
+			"@utils/*": [
+				"utils/*"
+			],
+			"@resolvers/*": [
+				"resolvers/*"
+			]
+		},
+		"skipLibCheck": true
+	},
+	"include": [
+		"src"
+	]
+}

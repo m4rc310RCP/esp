@@ -1,0 +1,31 @@
+---
+name: Deploy to Dokku (DEV)
+on:
+  push:
+    branches:
+      - release/*
+  pull_request:
+    branches:
+      - develop
+permissions:
+  contents: read
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cloning repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Push to dokku
+        uses: dokku/github-action@master
+        with:
+          branch: ${{ github.ref_name }}
+          git_remote_url: ssh://dokku@m4rc310.com.br/esp
+          ssh_private_key: ${{ secrets.DOKKU_SSH_PRIVATE_KEY }}
+      - name: Add Dokku host to known_hosts
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H "m4rc310.com.br,159.112.177.194" >> ~/.ssh/known_hosts

@@ -1,0 +1,41 @@
+{
+	"name": "esp",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "npm run build && node ./build/server.js",
+		"build": "./node_modules/.bin/rimraf ./build && ./node_modules/.bin/tsc --skipLibCheck && cp src/overview.html build/"
+	},
+	"_moduleAliases": {
+		"@root": "./build",
+		"@utils": "./build/utils",
+		"@resolvers": "./build/resolvers"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@apollo/server": "^4.11.2",
+		"@graphql-yoga/subscription": "^5.0.1",
+		"@types/express": "^5.0.0",
+		"@types/module-alias": "^2.0.4",
+		"@types/node": "^22.9.0",
+		"@typescript-eslint/eslint-plugin": "^8.13.0",
+		"@typescript-eslint/parser": "^8.13.0",
+		"class-validator": "^0.14.1",
+		"dotenv": "^16.4.5",
+		"eslint": "^9.14.0",
+		"express": "^4.21.1",
+		"graphql-subscriptions": "^2.0.0",
+		"graphql-yoga": "^5.8.0",
+		"module-alias": "^2.2.3",
+		"nodemon": "^3.1.7",
+		"prettier": "^3.3.3",
+		"reflect-metadata": "^0.2.2",
+		"rimraf": "^6.0.1",
+		"type-graphql": "2.0.0-rc.2",
+		"typedi": "^0.10.0",
+		"typescript": "^5.6.3"
+	}
+}
